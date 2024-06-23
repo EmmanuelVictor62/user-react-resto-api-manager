@@ -1,5 +1,9 @@
 import { combineReducers } from "@reduxjs/toolkit";
 
-const rootReducer = combineReducers({});
+import counterSlice from "@/slices/counterSlice";
+
+const rootReducer = combineReducers({
+  counter: counterSlice,
+});
 
 export default rootReducer;

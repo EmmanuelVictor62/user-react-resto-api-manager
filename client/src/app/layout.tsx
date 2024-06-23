@@ -1,13 +1,11 @@
-import type { Metadata } from "next";
+"use client";
 
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 
 import store, { persistor } from "../../state-manager/store";
 
-export const metadata: Metadata = {
-  title: "Task Manager App",
-};
+import "../../styles/style.scss";
 
 export default function RootLayout({
   children,
