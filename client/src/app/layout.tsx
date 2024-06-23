@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
 
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+
+import store, { persistor } from "../../state-manager/store";
+
 export const metadata: Metadata = {
   title: "Task Manager App",
 };
@@ -11,7 +16,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <head>
+        <link rel="image/png" href="/next.svg" />
+        <title>Task Manager</title>
+      </head>
+      <body suppressHydrationWarning>
+        <Provider store={store}>
+          <PersistGate persistor={persistor} loading={null}>
+            {typeof window === undefined ? null : <>{children}</>}
+          </PersistGate>
+        </Provider>
+      </body>
     </html>
   );
 }

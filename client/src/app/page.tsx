@@ -1,8 +1,10 @@
 import React from "react";
 
+import styles from "./page.module.scss";
+
 const Page: React.FC = () => {
   return (
-    <div>
+    <div className={styles["page"]}>
       <h1>Hello World</h1>
     </div>
   );
