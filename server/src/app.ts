@@ -1,8 +1,9 @@
 import express, { Response, Request } from "express";
 import dotenv from "dotenv";
 
-dotenv.config();
+import todoRoutes from "./routes/todoRoutes";
 
+dotenv.config();
 const app = express();
 
 // Route definition
@@ -12,5 +13,7 @@ app.get("/", (req: Request, res: Response) => {
     { name: "Hiliary", age: 30 },
   ]);
 });
+
+app.use("/api", todoRoutes);
 
 export default app;

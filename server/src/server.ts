@@ -1,5 +1,5 @@
 import app from "./app";
-import { dotenvConfig } from "./config/envconfig";
+import { dotenvConfig } from "./config/envConfig";
 
 dotenvConfig();
 

@@ -1,15 +1,15 @@
-import { MongoClient } from "mongodb";
-import { dotenvConfig } from "./envconfig";
+import mongoose from "mongoose";
+import { dotenvConfig } from "./envConfig";
 
 dotenvConfig();
 
 const uri = process.env.MONGODB_URI!;
 
-const client = new MongoClient(uri);
+const client = mongoose.connect(uri);
 
 const connectDb = async () => {
   try {
-    await client.connect();
+    await client;
   } catch (error) {
     process.exit(1);
   }
