@@ -1,13 +1,7 @@
-import path from "path";
 import app from "./app";
-import dotenv from "dotenv";
+import { dotenvConfig } from "./config/envconfig";
 
-const env =
-  process.env.NODE_ENV === "production"
-    ? ".env.production"
-    : ".env.development";
-
-dotenv.config({ path: path.resolve(__dirname, "..", env) });
+dotenvConfig();
 
 const PORT = process.env.PORT || 5000;
 
