@@ -2,6 +2,7 @@ import express, { Response, Request } from "express";
 import dotenv from "dotenv";
 
 import todoRoutes from "./routes/todoRoutes";
+import connectDb from "./config/dbConnect";
 
 dotenv.config();
 const app = express();
