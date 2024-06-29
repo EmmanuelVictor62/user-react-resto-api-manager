@@ -4,12 +4,12 @@ import User from "../models/userModel";
 
 export const listAllUsers = async (req: Request, res: Response) => {
   try {
-    const todos = [
+    const users = [
       { id: "1", title: "Todo 1" },
       { id: "2", title: "Todo 2" },
     ];
     // const users = await User.find();
-    res.json(todos);
+    res.json(users);
     res.end();
   } catch (error) {
     console.error("request failed");

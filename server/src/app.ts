@@ -2,10 +2,13 @@ import express, { Response, Request } from "express";
 import dotenv from "dotenv";
 import connectDb from "./config/dbConnect";
 
-import todoRoutes from "./routes/userRoutes";
+import userRoutes from "./routes/userRoutes";
 
 dotenv.config();
+
 const app = express();
+app.use(express.json());
+
 connectDb();
 
 // Route definition
@@ -16,6 +19,6 @@ app.get("/", (req: Request, res: Response) => {
   ]);
 });
 
-app.use("/api", todoRoutes);
+app.use("/api", userRoutes);
 
 export default app;
