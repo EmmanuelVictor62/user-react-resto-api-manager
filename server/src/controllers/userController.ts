@@ -1,10 +1,14 @@
 import { Request, Response } from "express";
 
-import Todo from "../models/todoModel";
+import User from "../models/userModel";
 
-export const listAllTodos = async (req: Request, res: Response) => {
+export const listAllUsers = async (req: Request, res: Response) => {
   try {
-    const todos = await Todo.find();
+    const todos = [
+      { id: "1", title: "Todo 1" },
+      { id: "2", title: "Todo 2" },
+    ];
+    // const users = await User.find();
     res.json(todos);
     res.end();
   } catch (error) {
@@ -13,17 +17,17 @@ export const listAllTodos = async (req: Request, res: Response) => {
   }
 };
 
-export const createTodo = async (req: Request, res: Response) => {
+export const createUser = async (req: Request, res: Response) => {
   try {
     const { title, description, dueDate } = req.body;
 
-    const newTodo = new Todo({
+    const newUser = new User({
       title,
       description,
       dueDate,
     });
 
-    const createdTodo = await newTodo.save();
+    const createdTodo = await newUser.save();
 
     res.status(201).json(createdTodo);
     res.end();

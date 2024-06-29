@@ -1,7 +1,7 @@
 import React from "react";
 
 import ActiveLink from "@/components/Link";
-import { sidebarRoutes } from "@/util/routes";
+import { sidebarRoutes } from "@/utils/routes";
 
 import styles from "./sidebar.module.scss";
 

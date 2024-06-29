@@ -1,13 +1,13 @@
 import mongoose, { Date, Document, Schema, model } from "mongoose";
 
-interface ITodo extends Document {
+interface IUser extends Document {
   title: string;
   description: string;
   completed: boolean;
   dueDate: Date;
 }
 
-const todoSchema = new Schema<ITodo>({
+const userSchema = new Schema<IUser>({
   title: {
     type: String,
     required: [true, "Oops, no name added"],
@@ -26,6 +26,6 @@ const todoSchema = new Schema<ITodo>({
   },
 });
 
-const Todo = model<ITodo>("Todo", todoSchema);
+const User = model<IUser>("User", userSchema);
 
-export default Todo;
+export default User;

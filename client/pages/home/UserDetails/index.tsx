@@ -19,7 +19,7 @@ const UserDetails: React.FC = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch<Dispatch<any>>();
-  const { loading, user } = useSelector(userSlice);
+  const { user } = useSelector(userSlice);
 
   const handleBackToDashboard = (userId: string, userStatus: string) => {
     dispatch(updateUserStatusThunk({ id: userId, status: userStatus }));
@@ -30,7 +30,6 @@ const UserDetails: React.FC = () => {
     dispatch(updateUserStatusThunk({ id: userId, status: userStatus }));
     dispatch(listAllUsersThunk());
   };
-  console.log(loading);
 
   const handleActiveTab = (tabIndex: number) => {
     setActiveTab(tabIndex);
