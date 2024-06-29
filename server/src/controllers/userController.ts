@@ -1,11 +1,15 @@
 import { Request, Response } from "express";
 
-import User from "../models/todoModel";
+import User from "../models/userModel";
 
 export const listAllUsers = async (req: Request, res: Response) => {
   try {
-    const users = await User.find();
-    res.json(users);
+    const todos = [
+      { id: "1", title: "Todo 1" },
+      { id: "2", title: "Todo 2" },
+    ];
+    // const users = await User.find();
+    res.json(todos);
     res.end();
   } catch (error) {
     console.error("request failed");
