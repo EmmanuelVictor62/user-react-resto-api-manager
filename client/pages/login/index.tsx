@@ -6,8 +6,8 @@ import Input from "@/components/Input/input";
 
 import * as Yup from "yup";
 import { Formik, Form } from "formik";
-import { LoginPageInitialValues } from "@/util/initialValues";
-import { validationSchema } from "@/util/validation";
+import { LoginPageInitialValues } from "@/utils/initialValues";
+import { validationSchema } from "@/utils/validation";
 
 import styles from "./login.module.scss";
 
