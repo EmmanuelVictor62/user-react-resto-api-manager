@@ -1,0 +1,38 @@
+@import "../../styles/base/mixins";
+@import "../../styles/variables";
+
+.sidebar {
+  background-color: $col-white;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: fixed;
+  left: 0px;
+  @include z-index(normal);
+  height: 100vh;
+  width: 283px;
+  padding-top: 120px;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.04);
+
+  &__content {
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &-header {
+      color: $col-grey-1;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      padding-left: 30px;
+    }
+    &-children {
+      &-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
