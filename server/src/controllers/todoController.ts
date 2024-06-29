@@ -8,6 +8,7 @@ export const listAllTodos = async (req: Request, res: Response) => {
     res.json(todos);
     res.end();
   } catch (error) {
+    console.error("request failed");
     res.status(500).json({ message: "Server Error" });
   }
 };

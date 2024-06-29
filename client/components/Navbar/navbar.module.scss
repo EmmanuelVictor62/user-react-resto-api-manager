@@ -1,0 +1,106 @@
+@import "../../styles/variables";
+@import "../../styles/base/mixins";
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 80px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $col-white;
+  filter: drop-shadow(3px 0px 20px rgba(0, 0, 0, 0.04));
+  @include z-index(overlay);
+
+  &__logo-container {
+    & span {
+      & svg {
+        width: 144px;
+      }
+    }
+  }
+
+  &__input {
+    flex: 1;
+    height: 100%;
+    font-size: 14px;
+    padding: 12px 20px;
+    border: 1px solid $col-blue-4;
+    @include border-radius(8px 0px 0px 8px);
+    border-right: none;
+    &::placeholder {
+      font-size: 14px;
+      color: $col-grey-1;
+    }
+    &-container {
+      display: flex;
+      width: 400px;
+      height: 40px;
+    }
+    &-search-icon-container {
+      width: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      @include border-radius(0px 8px 8px 0px);
+      background-color: #39cdcc;
+    }
+  }
+
+  &__right {
+    &-container {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-right: 30px;
+    }
+    &-bell-icon {
+      & span {
+        & svg {
+          height: 26px;
+          width: 26px;
+        }
+      }
+    }
+  }
+
+  &__user {
+    &-image {
+      & img {
+        @include border-radius(50%);
+      }
+    }
+    &-name {
+      color: $col-blue-2;
+      font-size: 14px;
+      font-weight: 500;
+      &-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        & span {
+          & svg {
+            display: flex;
+            align-items: center;
+          }
+        }
+      }
+      &-dropdown {
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        background-color: $col-white;
+        padding: 8px 15px;
+        @include border-radius(8px);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+        &-item {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

@@ -1,10 +1,12 @@
 import express, { Response, Request } from "express";
 import dotenv from "dotenv";
+import connectDb from "./config/dbConnect";
 
 import todoRoutes from "./routes/todoRoutes";
 
 dotenv.config();
 const app = express();
+connectDb();
 
 // Route definition
 app.get("/", (req: Request, res: Response) => {

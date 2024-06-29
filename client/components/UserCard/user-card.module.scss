@@ -1,0 +1,40 @@
+@import "../../styles/variables";
+@import "../../styles/base/mixins";
+
+.user-card {
+  width: 220px;
+  height: 140px;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  background: $col-white;
+  box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+  @include border-radius(8px);
+
+  &__icon {
+    @include border-radius(50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+  }
+
+  &__name {
+    font-size: 14px;
+    font-weight: 500;
+    color: $col-grey-1;
+    text-transform: uppercase;
+  }
+
+  &__number {
+    font-size: 24px;
+    font-weight: 600;
+    color: $col-blue-2;
+    line-height: initial;
+  }
+}

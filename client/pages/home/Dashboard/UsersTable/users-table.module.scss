@@ -1,0 +1,85 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/base/mixins";
+
+.user-table {
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1.2fr 0.8fr 0.2fr;
+    align-items: center;
+    padding: 21px 0px;
+    flex-shrink: 0;
+
+    & p {
+      font-size: 14px;
+      font-weight: 400;
+      color: $col-grey-1;
+    }
+
+    &-phone-no,
+    &-date-joined {
+      justify-self: center;
+    }
+
+    &-status {
+      justify-self: center;
+      width: 80px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      font-weight: 400;
+      @include border-radius(20px);
+      &[data-status="Inactive"] {
+        color: $col-grey-1;
+        background-color: $col-blue-6;
+      }
+      &[data-status="Active"] {
+        color: #39cd62;
+        background-color: $col-blue-7;
+      }
+      &[data-status="Pending"] {
+        color: $col-yellow-1;
+        background-color: $col-blue-8;
+      }
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    background-color: $col-white;
+    box-shadow: 3px 5px 20px 0px rgba(0, 0, 0, 0.04);
+    @include border-radius(8px);
+    @include z-index(dropdown-menu);
+    &-item {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      @include border-radius(4px);
+      height: 40px;
+      width: 160px;
+      padding: 0px 10px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgba(33, 63, 125, 0.06);
+      }
+      &-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #545f7d;
+        line-height: normal;
+      }
+    }
+    &-container {
+      position: relative;
+    }
+  }
+}
