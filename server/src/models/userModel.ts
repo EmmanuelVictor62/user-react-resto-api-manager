@@ -1,28 +1,40 @@
 import mongoose, { Date, Document, Schema, model } from "mongoose";
 
 interface IUser extends Document {
-  title: string;
-  description: string;
-  completed: boolean;
-  dueDate: Date;
+  id: string | undefined | null;
+  organisation: string | undefined | null;
+  userName: string | undefined | null;
+  phoneNumber: string | undefined | null;
+  dateJoined: string | undefined | null;
+  status: string | undefined | null;
+  bank: string | undefined | null;
+  accountBalance: string | undefined | null;
+  educationLevel: string | undefined | null;
+  employmentStatus: string | undefined | null;
+  employementSector: string | undefined | null;
+  officeEmail: string | undefined | null;
+  guarantor: string | undefined | null;
+  guarantorPhoneNo: string | undefined | null;
+  guarantorRelationship: string | undefined | null;
+  guarantorEmail: string | undefined | null;
 }
 
 const userSchema = new Schema<IUser>({
-  title: {
+  id: {
     type: String,
-    required: [true, "Oops, no name added"],
+    required: [true, "No user id added"],
   },
-  description: {
+  organisation: {
     type: String,
     required: [true, "Oops, no description added"],
   },
-  dueDate: {
+  userName: {
     type: String,
     required: true,
   },
-  completed: {
-    type: Boolean,
-    required: false,
+  phoneNumber: {
+    type: String,
+    required: [false],
   },
 });
 
