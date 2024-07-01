@@ -26,13 +26,61 @@ const userSchema = new Schema<IUser>({
   },
   organisation: {
     type: String,
-    required: [true, "Oops, no description added"],
+    required: [true, "Oops, no organisation added"],
   },
   userName: {
     type: String,
     required: true,
   },
   phoneNumber: {
+    type: String,
+    required: [false],
+  },
+  dateJoined: {
+    type: String,
+    required: [false],
+  },
+  status: {
+    type: String,
+    required: [false],
+  },
+  bank: {
+    type: String,
+    required: [false],
+  },
+  accountBalance: {
+    type: String,
+    required: [false],
+  },
+  educationLevel: {
+    type: String,
+    required: [false],
+  },
+  employmentStatus: {
+    type: String,
+    required: [false],
+  },
+  employementSector: {
+    type: String,
+    required: [false],
+  },
+  officeEmail: {
+    type: String,
+    required: [false],
+  },
+  guarantor: {
+    type: String,
+    required: [false],
+  },
+  guarantorPhoneNo: {
+    type: String,
+    required: [false],
+  },
+  guarantorRelationship: {
+    type: String,
+    required: [false],
+  },
+  guarantorEmail: {
     type: String,
     required: [false],
   },
