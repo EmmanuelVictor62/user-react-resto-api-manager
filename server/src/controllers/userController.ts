@@ -4,15 +4,11 @@ import User from "../models/userModel";
 
 export const listAllUsers = async (req: Request, res: Response) => {
   try {
-    const todos = [
-      { id: "1", title: "Todo 1" },
-      { id: "2", title: "Todo 2" },
-    ];
-    // const users = await User.find();
-    res.json(todos);
-    res.end();
+    const users = await User.find();
+
+    res.json(users);
   } catch (error) {
-    console.error("request failed");
+    console.error("request failed", error);
     res.status(500).json({ message: "Server Error" });
   }
 };
@@ -27,11 +23,11 @@ export const createUser = async (req: Request, res: Response) => {
       dueDate,
     });
 
-    const createdTodo = await newUser.save();
+    const createdUser = await newUser.save();
 
-    res.status(201).json(createdTodo);
-    res.end();
+    res.status(201).json(createdUser);
   } catch (error) {
-    res.status(500);
+    console.error(error);
+    res.status(500).json({ message: "Error creating user" });
   }
 };
