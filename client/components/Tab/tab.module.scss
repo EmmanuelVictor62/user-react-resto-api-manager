@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+@import "../../styles/base/mixins";
+
+.tab {
+  &__button {
+    padding: 5px 14px;
+    border-bottom: 2px solid transparent;
+    text-align: center;
+    color: $col-black;
+    font-size: 14px;
+    &[data-active="true"] {
+      color: $col-blue-1;
+      border-bottom: 2px solid $col-blue-1;
+    }
+    &-wrapper {
+      display: flex;
+      gap: 20px;
+    }
+  }
+}
